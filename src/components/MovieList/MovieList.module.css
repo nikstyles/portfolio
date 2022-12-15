@@ -1,0 +1,12 @@
+.title {
+  color: black;
+  font-weight: 500;
+  margin: 8px;
+}
+.title:hover {
+  color: orange;
+}
+
+.link {
+  text-decoration: none;
+}

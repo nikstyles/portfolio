@@ -1,0 +1,25 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+}
+
+.item {
+  margin-right: 5px;
+}
+
+.character {
+  width: 200px;
+}
+
+.name {
+  width: 200px;
+}
+
+.image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
