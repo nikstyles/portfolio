@@ -10,7 +10,7 @@ const WrapApp = styled.div`
 
 const Homepage = lazy(() => import('pages/Homepage'));
 const Projects = lazy(() => import('pages/Projects/Projects'));
-// const MovieDetails = lazy(() => import('pages/MovieDetails'));
+const About = lazy(() => import('pages/About/About'));
 
 export const App = () => {
   return (
@@ -20,7 +20,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/projects" element={<Projects />} />
-          {/* <Route path="/movies/:movieId/" element={<MovieDetails />}></Route> */}
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<Homepage />} />
         </Routes>
       </Suspense>
