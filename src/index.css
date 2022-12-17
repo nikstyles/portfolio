@@ -4,6 +4,8 @@ html {
 }
 
 body {
+  box-sizing: border-box;
+
   margin: 0;
   font-family: HelveticaNeueCyr, sans-serif;
   -webkit-font-smoothing: antialiased;

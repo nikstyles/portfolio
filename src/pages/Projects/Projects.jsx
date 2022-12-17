@@ -6,7 +6,7 @@ import { BsGithub } from 'react-icons/bs';
 import { CgBrowser } from 'react-icons/cg';
 
 const ListProjects = styled.ul`
-  margin-top: 65px;
+  margin-top: 55px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -15,22 +15,27 @@ const ListProjects = styled.ul`
 const ItemProjects = styled.li`
   height: 350px;
   border-radius: ${props => props.theme.radii.big};
-
   background-color: rgba(255, 255, 255, 0.07);
 `;
 const WrapCoverProject = styled.div`
+  display: block;
   border-radius: ${props => props.theme.radii.big};
-  background: linear-gradient(transparent, #663ee1);
-  /* position: relative; */
-  z-index: -10;
+  /* z-index: -10; */
   width: 380px;
   height: 276px;
+  overflow: hidden;
+  position: relative;
+
+  background: linear-gradient(transparent, #663ee1);
 `;
 const CoverProject = styled.img`
-  border-radius: ${props => props.theme.radii.big};
-  border: solid 1px white;
-  :hover {
-    opacity: 20%;
+  border-radius: 20px;
+  border: solid 1px ${props => props.theme.colors.primary};
+  width: 376px;
+  height: 274px;
+
+  .image_cover:hover & {
+    opacity: 10%;
   }
 `;
 
@@ -41,8 +46,9 @@ const WrapLink = styled.div`
   gap: 10px;
 `;
 const LinkButton = styled.a`
+  display: flex;
   justify-content: center;
-  padding: 10px 15px;
+  padding: 5px 10px;
   border-radius: ${props => props.theme.radii.big};
   background-color: ${props => props.theme.colors.text};
   text-decoration: none;
@@ -64,20 +70,57 @@ const WrapInfo = styled.div`
   padding: 15px;
 `;
 
+const TechSkillsText = styled.p`
+  font-size: ${p => p.theme.fontSizes.s};
+  font-weight: ${p => p.theme.fontWeights.normal};
+  color: ${p => p.theme.colors.text};
+  line-height: ${p => p.theme.lineHeights.body};
+
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  color: ${props => props.theme.colors.text};
+
+  width: 100%;
+  height: 100%;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: translateY(100%);
+  opacity: 0.01;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .image_cover:hover & {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 export default function Projects() {
-  const elements = items.map(({ id, toSite, toGithub, text, image }) => (
+  const elements = items.map(({ id, toSite, toGithub, tech, text, image }) => (
     <ItemProjects key={id}>
-      <WrapCoverProject>
+      <WrapCoverProject className="image_cover">
         <CoverProject src={image} />
+        <TechSkillsText>{tech}</TechSkillsText>
       </WrapCoverProject>
       <WrapInfo>
         <TitleName>{text}</TitleName>
         <WrapLink>
           <LinkButton href={toSite} type="button" target="_blank">
-            <CgBrowser />
+            <CgBrowser size={20} />
           </LinkButton>
-          <LinkButton href={toGithub} type="button" target="_blank">
-            <BsGithub />
+          <LinkButton
+            href={toGithub}
+            type="button"
+            target="_blank"
+            alt="Github"
+          >
+            <BsGithub size={20} />
           </LinkButton>
         </WrapLink>
       </WrapInfo>

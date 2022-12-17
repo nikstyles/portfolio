@@ -32,6 +32,7 @@ export const dark = {
   radii: {
     none: 'none',
     normal: '5px',
+    medium: '15px',
     big: '20px',
     round: '50%',
   },
