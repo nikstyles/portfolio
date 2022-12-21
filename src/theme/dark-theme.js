@@ -5,7 +5,7 @@ export const dark = {
     yellow: 'yellow',
     accent: '#16A899',
     background: '#161633',
-    darkSecondary: '#282534',
+    darkSecondary: 'rgba(255, 255, 255, 0.07)',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: { body: 'HelveticaNeueCyr, sans-serif' },
@@ -19,6 +19,7 @@ export const dark = {
   fontWeights: {
     lite: 300,
     normal: 400,
+    medium: 700,
     bold: 900,
   },
   lineHeights: {

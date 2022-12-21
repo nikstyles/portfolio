@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 const Wrap = styled.div`
   margin-top: 55px;
+  padding-bottom: 150px;
+
+  box-sizing: border-box;
 `;
 const TitleTechSkills = styled.h3`
   color: ${p => p.theme.colors.text};
@@ -19,7 +22,7 @@ const WrapTechSkills = styled.ul`
 `;
 const ItemTechSkills = styled.li`
   padding: 25px 45px;
-  background-color: rgba(255, 255, 255, 0.07);
+  background-color: ${props => props.theme.colors.darkSecondary};
   border-radius: ${props => props.theme.radii.big};
   color: ${p => p.theme.colors.text};
   font-size: ${p => p.theme.fontSizes.l};

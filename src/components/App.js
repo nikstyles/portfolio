@@ -5,7 +5,8 @@ import styled from 'styled-components';
 
 const WrapApp = styled.div`
   background-color: ${props => props.theme.colors.background};
-  height: 100vh;
+  height: 100%;
+  background-attachment: fixed;
 `;
 
 const Homepage = lazy(() => import('pages/Homepage'));

@@ -7,13 +7,14 @@ import { CgBrowser } from 'react-icons/cg';
 
 const ListProjects = styled.ul`
   margin-top: 55px;
+  padding-bottom: 150px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 `;
 const ItemProjects = styled.li`
-  height: 350px;
+  height: 340px;
   border-radius: ${props => props.theme.radii.big};
   background-color: rgba(255, 255, 255, 0.07);
 `;
@@ -31,7 +32,7 @@ const WrapCoverProject = styled.div`
 const CoverProject = styled.img`
   border-radius: 20px;
   border: solid 1px ${props => props.theme.colors.primary};
-  width: 376px;
+  width: 378px;
   height: 274px;
 
   .image_cover:hover & {
