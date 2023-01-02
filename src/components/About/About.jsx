@@ -1,6 +1,6 @@
-import Container from '../../components/Container/Container';
 import styled from 'styled-components';
 import mykyta_2 from '../../images/mykyta_2.jpg';
+import ExperienceList from './ExperienceList/ExperienceList';
 
 const WrapAbout = styled.div`
   box-sizing: border-box;
@@ -36,13 +36,13 @@ const WrapExperienceEducation = styled.div`
   justify-content: space-between;
   gap: 50px;
 `;
-const WrapExperience = styled.div`
-  background-color: ${props => props.theme.colors.darkSecondary};
-  border-radius: ${props => props.theme.radii.big};
-  padding: 30px;
-  max-width: 780px;
-  position: relative;
-`;
+// const WrapExperience = styled.div`
+//   background-color: ${props => props.theme.colors.darkSecondary};
+//   border-radius: ${props => props.theme.radii.big};
+//   padding: 30px;
+//   max-width: 780px;
+//   position: relative;
+// `;
 const WrapEducation = styled.div`
   background-color: ${props => props.theme.colors.darkSecondary};
   border-radius: ${props => props.theme.radii.big};
@@ -87,7 +87,7 @@ const BgTitle = styled.div`
 
 export default function About() {
   return (
-    <Container>
+    <>
       <WrapAbout>
         <Photo src={mykyta_2} alt="x" />
         <AboutText>
@@ -98,27 +98,8 @@ export default function About() {
         </AboutText>
       </WrapAbout>
       <WrapExperienceEducation>
-        <WrapExperience>
-          <BgTitle />
-          <Title>WORK EXPERIENCE</Title>
-          <SecondaryTitle>Graphic Designer</SecondaryTitle>
-          <Text>
-            DNIPRO-M (January 2019 to January 2022) Creation of design of
-            leaflets, catalogues. Construction tool branding. Package design. 3D
-            modeling of accessories (Сinema 4d). Photo retouching. Rebranding
-            from TM Foresta to Dnipro-M of such a number of units. Website
-            banner. Merch (cups, t-shirts, paper clips...) Layout of
-            instructions.
-          </Text>
-          <SecondaryTitle>Graphic Designer</SecondaryTitle>
-          <Text>
-            Polikam Hi-Tech (March 2018 to August 2018) - Creation or resize of
-            graphic layouts. - Designing sales points according to the brand
-            book. - Layout of presentations. There was an opportunity to
-            cooperate with such brands as: NESCAFE, Nesquik, Lion, Purina ONE,
-            PRO PLAN, Gourmet, Friskies, Dog Chow, Nestle Fitness, Optimeal
-          </Text>
-        </WrapExperience>
+        <ExperienceList />
+
         <WrapEducation>
           <BgTitle />
           <Title>EDUCATION</Title>
@@ -129,6 +110,6 @@ export default function About() {
           <Text>Kyiv Industrial College (2010-2014)</Text>
         </WrapEducation>
       </WrapExperienceEducation>
-    </Container>
+    </>
   );
 }

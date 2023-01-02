@@ -11,7 +11,7 @@ const WrapApp = styled.div`
 
 const Homepage = lazy(() => import('pages/Homepage'));
 const Projects = lazy(() => import('pages/Projects/Projects'));
-const About = lazy(() => import('pages/About/About'));
+const AboutPage = lazy(() => import('pages/AboutPage/AboutPage'));
 
 export const App = () => {
   return (
@@ -21,7 +21,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<Homepage />} />
         </Routes>
       </Suspense>
