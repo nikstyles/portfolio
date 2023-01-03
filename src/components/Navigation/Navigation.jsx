@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import s from './Navigation.module.css';
 import Container from '../Container/Container';
 import logo from '../../images/logo.svg';
+import { useState } from 'react';
+import Modal from '../Modal/Modal';
 
 const WrapNav = styled.div`
   display: flex;
@@ -18,6 +20,21 @@ const StyledLink = styled(NavLink)`
   color: ${props => props.theme.colors.text};
   &.active {
     color: ${props => props.theme.colors.accent};
+  }
+`;
+const Button = styled.button`
+  font-weight: ${p => p.theme.fontWeights.normal};
+  font-size: ${p => p.theme.fontSizes.m};
+  line-height: ${p => p.theme.lineHeights.heading};
+  color: #ffffff8d;
+  margin-left: 50px;
+  background-color: ${props => props.theme.colors.background};
+  border: 1px solid #ffffff8d;
+  border-radius: ${props => props.theme.radii.big};
+  padding: 10px 20px;
+  :hover {
+    color: ${props => props.theme.colors.text};
+    border: 1px solid ${props => props.theme.colors.text};
   }
 `;
 
@@ -37,6 +54,11 @@ const WrapLink = styled.div`
 `;
 
 export default function Navigation() {
+  const [showModal, setshowModal] = useState(false);
+
+  const toggleModal = () => {
+    setshowModal(!showModal);
+  };
   return (
     <nav className={s.nav}>
       <Container>
@@ -50,9 +72,12 @@ export default function Navigation() {
             </StyledLink>
             <StyledLink to="/projects">Projects</StyledLink>
             <StyledLink to="/about">About</StyledLink>
-            <StyledLink to="/contact">Contact</StyledLink>
           </WrapLink>
+          <Button type="button" onClick={toggleModal}>
+            Contact
+          </Button>
         </WrapNav>
+        {showModal && <Modal toggleModal={toggleModal} />}
       </Container>
     </nav>
   );
