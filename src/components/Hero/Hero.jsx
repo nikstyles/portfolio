@@ -77,7 +77,7 @@ const Hero = () => {
         const speed = layer.getAttribute('data-speed');
         const setX = (window.innerWidth - e.pageX * speed) / 400;
         const setY = (window.innerHeight - e.pageY * speed) / 300;
-        console.log(setX, setY);
+        // console.log(setX, setY);
         layer.style.transform = `translateX(${setX}px) translateY(${setY}px)`;
       });
     });

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { createPortal } from 'react-dom';
+import { RiCloseLine } from 'react-icons/ri';
 
 const ModalBackdrop = styled.div`
   position: fixed;
@@ -8,7 +9,7 @@ const ModalBackdrop = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.753);
-  z-index: 99;
+  z-index: 10;
 `;
 
 const ModalContent = styled.div`
@@ -20,13 +21,15 @@ const ModalContent = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 11;
 
-  min-height: 300px;
-  max-width: 600px;
+  min-height: 250px;
+  max-width: 550px;
   width: 100%;
 
-  box-shadow: 1px 5px 5px -1px rgba(0, 0, 0, 0.2),
-    0px 10px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.096),
+    0px 0px 60px -5px rgba(103, 62, 225, 0.486),
+    0px 20px 40px -7px rgba(0, 0, 0, 0.3);
 `;
 
 const CloseBtn = styled.div`
@@ -50,7 +53,7 @@ export default function Modal({ toggleModal }) {
     <ModalBackdrop>
       <ModalContent>
         <CloseBtn type="button" onClick={toggleModal}>
-          x
+          <RiCloseLine size={30} />
         </CloseBtn>
       </ModalContent>
     </ModalBackdrop>,

@@ -53,12 +53,14 @@ const WrapLink = styled.div`
   align-items: left;
 `;
 
-export default function Navigation() {
+export default function Navigation({ setBlur }) {
   const [showModal, setshowModal] = useState(false);
 
   const toggleModal = () => {
     setshowModal(!showModal);
+    setBlur(!showModal);
   };
+
   return (
     <nav className={s.nav}>
       <Container>
