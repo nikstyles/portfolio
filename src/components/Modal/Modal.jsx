@@ -50,9 +50,9 @@ const modalRoot = document.querySelector('#modal-root');
 
 export default function Modal({ toggleModal }) {
   return createPortal(
-    <ModalBackdrop>
-      <ModalContent>
-        <CloseBtn type="button" onClick={toggleModal}>
+    <ModalBackdrop onClick={() => toggleModal()}>
+      <ModalContent onClick={e => e.stopPropagation()}>
+        <CloseBtn type="button" onClick={() => toggleModal()}>
           <RiCloseLine size={30} />
         </CloseBtn>
       </ModalContent>

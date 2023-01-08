@@ -5,6 +5,7 @@ import Container from '../Container/Container';
 import logo from '../../images/logo.svg';
 import { useState } from 'react';
 import Modal from '../Modal/Modal';
+import { useEffect, useCallback } from 'react';
 
 const WrapNav = styled.div`
   display: flex;
@@ -60,6 +61,22 @@ export default function Navigation({ setBlur }) {
     setshowModal(!showModal);
     setBlur(!showModal);
   };
+
+  const keyPress = useCallback(
+    e => {
+      if (e.code === 'Escape') {
+        setshowModal(!showModal);
+        setBlur(!showModal);
+        // console.log('I pressed');
+      }
+    },
+    [setBlur, showModal]
+  );
+
+  useEffect(() => {
+    window.addEventListener('keydown', keyPress);
+    return () => window.removeEventListener('keydown', keyPress);
+  }, [keyPress]);
 
   return (
     <nav className={s.nav}>
