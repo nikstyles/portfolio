@@ -37,4 +37,9 @@ export const dark = {
     big: '20px',
     round: '50%',
   },
+  media: {
+    phone: '(max-width: 425px)',
+    tablet: '(max-width: 768px) and (min-width: 425px)',
+    desktop: '(max-width: 1200px) and (min-width: 768px)',
+  },
 };
