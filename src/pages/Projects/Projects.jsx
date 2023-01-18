@@ -14,27 +14,53 @@ const ListProjects = styled.ul`
   gap: 30px;
 `;
 const ItemProjects = styled.li`
-  height: 340px;
+  /* height: 340px; */
+  width: 100%;
+
+  /* max-width: 369px; */
   border-radius: ${props => props.theme.radii.big};
   background-color: rgba(255, 255, 255, 0.07);
+
+  @media (min-width: 768px) {
+    width: 354px;
+  }
 `;
 const WrapCoverProject = styled.div`
   display: block;
   border-radius: ${props => props.theme.radii.big};
   /* z-index: -10; */
-  width: 380px;
-  height: 276px;
+  /* max-width: 369px; */
+  /* max-height: 276px; */
   overflow: hidden;
   position: relative;
 
   background: linear-gradient(transparent, #663ee1);
+  @media (min-width: 768px) {
+    /* max-width: 369px; */
+    /* max-height: 272px; */
+  }
+  @media (min-width: 1101px) {
+    /* max-width: 380px; */
+    /* max-height: 276px; */
+  }
 `;
 const CoverProject = styled.img`
   border-radius: 20px;
   border: solid 1px ${props => props.theme.colors.primary};
-  width: 378px;
-  height: 274px;
+  /* width: 367px;
+  height: 270px; */
+  width: 100%;
 
+  /* height: 100%; */
+
+  @media (min-width: 768px) {
+    /* width: 367px;
+    height: 270px; */
+  }
+  @media (min-width: 1101px) {
+    /* width: 378px;
+    height: 274px; */
+  }
   .image_cover:hover & {
     opacity: 10%;
   }

@@ -21,9 +21,11 @@ const HeroBanner = styled.div`
 
   @media (min-width: 768px) {
     padding: 45px 0;
+    margin-top: 50px;
   }
   @media (min-width: 1100px) {
     padding: 80px 0;
+    margin-top: 80px;
   }
   @media (min-width: 1200px) {
     height: 468px;
@@ -35,7 +37,7 @@ const HeroBanner = styled.div`
 
 const WrapText = styled.div`
   color: ${p => p.theme.colors.text};
-  padding-left: 80px;
+  padding-left: 70px;
   @media (min-width: 1100px) {
     padding-left: 130px;
   }
@@ -49,8 +51,8 @@ const WelcomText = styled.h3`
   max-width: 350px;
   border-top-right-radius: ${p => p.theme.radii.big};
   border-bottom-right-radius: ${p => p.theme.radii.big};
-  padding: 15px 30px 15px 80px;
-  margin-left: -80px;
+  padding: 15px 30px 15px 70px;
+  margin-left: -70px;
   @media (min-width: 1100px) {
     margin-left: -130px;
     padding: 15px 30px 15px 130px;
@@ -110,8 +112,8 @@ const LineOne = styled.img`
 `;
 const LineSecond = styled.img`
   position: absolute;
-  bottom: 125px;
-  right: 220px;
+  bottom: 110px;
+  right: 230px;
   z-index: 1;
   width: 200px;
 
