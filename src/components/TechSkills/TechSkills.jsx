@@ -19,10 +19,14 @@ const WrapTechSkills = styled.ul`
 
   display: flex;
   flex-wrap: wrap;
-  gap: 35px;
+  /* gap: 35px; */
+
   @media (max-width: 1200px) {
     justify-content: space-between;
     gap: 35px;
+  }
+  @media (max-width: 768px) {
+    gap: 20px;
   }
   @media (max-width: 1200px) and (min-width: 1100px) {
     justify-content: space-between;
@@ -49,7 +53,14 @@ const ItemTechSkills = styled.li`
   align-items: center;
 
   @media (max-width: 1100px) {
-    width: 230px;
+    width: 222px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: ${p => p.theme.fontSizes.s};
+
+    width: 135px;
+    padding: 15px 25px;
   }
 `;
 
