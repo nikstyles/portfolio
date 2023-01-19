@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navigation from './Navigation';
 import styled from 'styled-components';
 import { useState } from 'react';
+import { GlobalStyles } from 'utilities/styles/global.styles';
 
 const WrapApp = styled.div`
   background-color: ${props => props.theme.colors.background};
@@ -27,6 +28,7 @@ export const App = () => {
 
   return (
     <WrapApp blur={blur}>
+      <GlobalStyles />
       <Navigation setBlur={setBlur} />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
