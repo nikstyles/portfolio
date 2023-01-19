@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 const ItemsExperience = styled.div`
   padding-top: 30px;
-  display: flex;
   gap: 60px;
   border-bottom: 2px solid ${p => p.theme.colors.background};
   padding-bottom: 30px;
   :last-child {
     border-bottom: none;
     padding-bottom: 0;
+  }
+  @media (min-width: 768px) {
+    display: flex;
   }
 `;
 

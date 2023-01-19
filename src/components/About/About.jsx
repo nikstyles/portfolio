@@ -8,12 +8,25 @@ const WrapAbout = styled.div`
 
   background-color: ${props => props.theme.colors.darkSecondary};
   border-radius: ${props => props.theme.radii.big};
-  margin-top: 70px;
-  padding: 30px 90px;
-  display: flex;
+  margin-top: 30px;
+  padding: 30px 30px;
+
   align-items: center;
   justify-content: center;
   gap: 35px;
+
+  @media (min-width: 768px) {
+    padding: 30px 50px;
+    margin-top: 40px;
+    display: flex;
+  }
+  @media (min-width: 1100px) {
+    padding: 30px 90px;
+    margin-top: 40px;
+  }
+  @media (min-width: 1200px) {
+    margin-top: 70px;
+  }
 `;
 
 const Photo = styled.img`
@@ -28,14 +41,21 @@ const AboutText = styled.p`
   font-size: ${p => p.theme.fontSizes.s};
   font-weight: ${p => p.theme.fontWeights.normal};
   line-height: ${p => p.theme.lineHeights.body};
+  padding-top: 20px;
+  @media (min-width: 768px) {
+    padding-top: 0;
+  }
 `;
 
 const WrapExperienceEducation = styled.div`
   padding-top: 50px;
   padding-bottom: 130px;
-  display: flex;
+
   justify-content: space-between;
   gap: 50px;
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
 // const WrapExperience = styled.div`
 //   background-color: ${props => props.theme.colors.darkSecondary};
