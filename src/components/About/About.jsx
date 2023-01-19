@@ -48,13 +48,14 @@ const AboutText = styled.p`
 `;
 
 const WrapExperienceEducation = styled.div`
-  padding-top: 50px;
+  margin-top: 30px;
   padding-bottom: 130px;
 
   justify-content: space-between;
   gap: 50px;
   @media (min-width: 768px) {
     display: flex;
+    margin-top: 50px;
   }
 `;
 // const WrapExperience = styled.div`

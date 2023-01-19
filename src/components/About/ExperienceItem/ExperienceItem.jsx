@@ -44,6 +44,10 @@ const Text = styled.p`
   font-weight: ${p => p.theme.fontWeights.lite};
   line-height: ${p => p.theme.lineHeights.body};
   letter-spacing: 0.04em;
+  padding-top: 25px;
+  @media (min-width: 768px) {
+    padding-top: 0;
+  }
 `;
 
 export default function ExperienceItem() {

@@ -5,8 +5,13 @@ const WrapEducationList = styled.div`
   background-color: ${props => props.theme.colors.darkSecondary};
   border-radius: ${props => props.theme.radii.big};
   padding: 30px;
-  width: 250px;
+
   position: relative;
+  margin-top: 30px;
+  @media (min-width: 768px) {
+    margin-top: 0;
+    max-width: 250px;
+  }
 `;
 
 const Title = styled.h2`

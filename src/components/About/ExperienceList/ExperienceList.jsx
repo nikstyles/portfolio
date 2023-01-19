@@ -5,7 +5,7 @@ const WrapExperienceList = styled.div`
   background-color: ${props => props.theme.colors.darkSecondary};
   border-radius: ${props => props.theme.radii.big};
   padding: 30px;
-  max-width: 780px;
+  /* max-width: 780px; */
   position: relative;
 `;
 
