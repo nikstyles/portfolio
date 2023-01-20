@@ -86,8 +86,12 @@ const LogoLink = styled(NavLink)`
   margin-right: 100px;
 `;
 const Logo = styled.img`
-  height: 55px;
+  height: 45px;
   fill: ${props => props.theme.colors.text};
+
+  @media (min-width: 1100px) {
+    height: 55px;
+  }
 `;
 
 const WrapLink = styled.div`

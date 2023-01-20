@@ -7,8 +7,12 @@ import { GlobalStyles } from 'utilities/styles/global.styles';
 
 const WrapApp = styled.div`
   background-color: ${props => props.theme.colors.background};
-  height: 100%;
-  background-attachment: fixed;
+  /* height: 100%; */
+  min-height: 100vh;
+
+  background-size: 100%;
+
+  /* background-attachment: fixed; */
   filter: ${props => (props.blur ? 'blur(10px)' : 'blur(0)')};
 `;
 

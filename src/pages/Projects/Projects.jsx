@@ -50,6 +50,7 @@ const CoverProject = styled.img`
   /* width: 367px;
   height: 270px; */
   width: 100%;
+  object-fit: cover;
 
   /* height: 100%; */
 
