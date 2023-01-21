@@ -10,7 +10,7 @@ const items = [
     toSite: 'https://nikstyles.github.io/goit-react-hw-08-phonebook/',
     toGithub: 'https://github.com/nikstyles/goit-react-hw-08-phonebook',
     text: 'Phonebook',
-    tech: 'HTML, CSS, JS, React/Redux, WEBPACK, SASS, BEM, Axios, GIT',
+    tech: 'HTML, CSS, JS, React/Redux, WEBPACK, Axios, GIT',
     image: phonebook,
   },
   {
@@ -18,7 +18,7 @@ const items = [
     toSite: 'https://nadtosonna.github.io/js-team-project-4/',
     toGithub: 'https://github.com/nadtosonna/js-team-project-4/',
     text: 'Filmoteka',
-    tech: 'HTML, CSS, JS, PARCEL, SASS, BEM, Axios, Firebase, GIT',
+    tech: 'HTML, SASS, BEM, JS, PARCEL, Axios, Firebase, GIT',
     image: filmoteka,
   },
   {
@@ -26,7 +26,7 @@ const items = [
     toSite: 'https://mkundeev.github.io/team-project/',
     toGithub: 'https://github.com/mkundeev/team-project',
     text: 'IceCream',
-    tech: 'HTML, CSS, JS, WEBPACK, SASS, BEM, GIT',
+    tech: 'HTML, SASS, JS, WEBPACK, BEM, GIT',
     image: iceCream,
   },
   {

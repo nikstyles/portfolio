@@ -6,12 +6,15 @@ import { BsGithub } from 'react-icons/bs';
 import { CgBrowser } from 'react-icons/cg';
 
 const ListProjects = styled.ul`
-  margin-top: 55px;
+  margin-top: 30px;
   padding-bottom: 150px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  @media (min-width: 1100px) {
+    margin-top: 55px;
+  }
 `;
 const ItemProjects = styled.li`
   /* height: 340px; */
@@ -22,15 +25,15 @@ const ItemProjects = styled.li`
   background-color: rgba(255, 255, 255, 0.07);
 
   @media (min-width: 768px) {
-    width: 354px;
+    max-width: 354px;
+  }
+  @media (min-width: 1100px) {
+    max-width: 31.62%;
   }
 `;
 const WrapCoverProject = styled.div`
-  display: block;
   border-radius: ${props => props.theme.radii.big};
-  /* z-index: -10; */
-  /* max-width: 369px; */
-  /* max-height: 276px; */
+  display: flex;
   overflow: hidden;
   position: relative;
 
@@ -50,7 +53,7 @@ const CoverProject = styled.img`
   /* width: 367px;
   height: 270px; */
   width: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
 
   /* height: 100%; */
 
@@ -76,12 +79,15 @@ const WrapLink = styled.div`
 const LinkButton = styled.a`
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
   padding: 5px 10px;
   border-radius: ${props => props.theme.radii.big};
-  background-color: ${props => props.theme.colors.text};
+  background-color: #ffffff81;
   text-decoration: none;
   color: ${props => props.theme.colors.background};
-
+  transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 400ms cubic-bezier(0.4, 0, 0.2, 1);
   :hover {
     background-color: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.text};
@@ -140,7 +146,7 @@ export default function Projects() {
         <TitleName>{text}</TitleName>
         <WrapLink>
           <LinkButton href={toSite} type="button" target="_blank">
-            <CgBrowser size={20} />
+            <CgBrowser size={20} /> Site
           </LinkButton>
           <LinkButton
             href={toGithub}
