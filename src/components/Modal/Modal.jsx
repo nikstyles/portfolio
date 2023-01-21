@@ -60,11 +60,17 @@ const ModalList = styled.div`
 const ModalItemBox = styled.ul`
   text-decoration: none;
   list-style: none;
+  min-width: 200px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+
   gap: 20px;
+  @media (min-width: 700px) {
+    flex-wrap: nowrap;
+  }
 `;
 const ItemModal = styled.li`
   width: 90px;
