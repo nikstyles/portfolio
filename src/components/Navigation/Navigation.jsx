@@ -29,6 +29,7 @@ const WrapWrapLinkNav = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
+
   @media (max-width: 1100px) {
     display: flex;
     flex-direction: column;
@@ -41,6 +42,8 @@ const WrapWrapLinkNav = styled.div`
     width: 100%;
     height: 100vh;
     background-color: ${props => props.theme.colors.background};
+    overflow: auto;
+
     z-index: 10;
     transition: left 1s;
     padding-top: 150px;
@@ -145,6 +148,12 @@ export default function Navigation({ setBlur }) {
       .matchMedia('(min-width: 1100px)')
       .addEventListener('change', e => setMatches(e.matches));
   }, []);
+
+  useEffect(() => {
+    openMenu
+      ? (document.body.style.overflow = 'hidden')
+      : console.log('openMenu: false');
+  }, [openMenu]);
 
   return (
     <nav className={s.nav}>

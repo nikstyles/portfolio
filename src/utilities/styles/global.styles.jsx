@@ -13,4 +13,8 @@ export const GlobalStyles = createGlobalStyle`
   }
   body {
   }
+  
+  /* .active body {
+    overflow: hidden;
+  } */
 `;
