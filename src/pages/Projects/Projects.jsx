@@ -7,7 +7,7 @@ import { CgBrowser } from 'react-icons/cg';
 
 const ListProjects = styled.ul`
   margin-top: 30px;
-  padding-bottom: 150px;
+  padding-bottom: 50px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;

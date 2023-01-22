@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Wrap = styled.div`
   margin-top: 55px;
-  padding-bottom: 150px;
+  padding-bottom: 80px;
 
   box-sizing: border-box;
 `;

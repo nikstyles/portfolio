@@ -49,7 +49,7 @@ const AboutText = styled.p`
 
 const WrapExperienceEducation = styled.div`
   margin-top: 30px;
-  padding-bottom: 130px;
+  padding-bottom: 50px;
 
   justify-content: space-between;
   gap: 50px;
