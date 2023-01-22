@@ -152,7 +152,7 @@ export default function Navigation({ setBlur }) {
   useEffect(() => {
     openMenu
       ? (document.body.style.overflow = 'hidden')
-      : console.log('openMenu: false');
+      : (document.body.style.overflow = 'visible');
   }, [openMenu]);
 
   return (
