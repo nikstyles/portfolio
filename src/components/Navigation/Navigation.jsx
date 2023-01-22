@@ -150,10 +150,10 @@ export default function Navigation({ setBlur }) {
   }, []);
 
   useEffect(() => {
-    openMenu
+    openMenu || showModal
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'visible');
-  }, [openMenu]);
+  }, [openMenu, showModal]);
 
   return (
     <nav className={s.nav}>
