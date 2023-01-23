@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { GlobalStyles } from 'utilities/styles/global.styles';
+import Loading from './Loading/Loading';
 
 const WrapApp = styled.div`
   background-color: ${props => props.theme.colors.background};
@@ -34,7 +35,7 @@ export const App = () => {
     <WrapApp blur={blur}>
       <GlobalStyles />
       <Navigation setBlur={setBlur} />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/projects" element={<Projects />} />
