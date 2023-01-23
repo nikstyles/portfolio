@@ -16,21 +16,21 @@ const HeroBanner = styled.div`
   background-color: ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.radii.big};
   position: relative;
-  margin-top: 80px;
+  margin-top: 250px;
   width: 100%;
+  height: 200px;
 
   @media (min-width: 768px) {
     padding: 45px 0;
     margin-top: 50px;
+    height: 365px;
+    margin-top: 80px;
   }
   @media (min-width: 1100px) {
     padding: 80px 0;
     margin-top: 80px;
-  }
-  @media (min-width: 1200px) {
     height: 468px;
   }
-
   /* @media ${p => p.theme.media.desktop} {
   } ; */
 `;
@@ -38,12 +38,16 @@ const HeroBanner = styled.div`
 const WrapText = styled.div`
   color: ${p => p.theme.colors.text};
   padding-left: 70px;
+  display: flex;
+  @media (min-width: 768px) {
+    display: block;
+  }
   @media (min-width: 1100px) {
     padding-left: 130px;
   }
 `;
 const WelcomText = styled.h3`
-  font-size: ${p => p.theme.fontSizes.xl};
+  font-size: ${p => p.theme.fontSizes.ll};
   font-weight: ${p => p.theme.fontWeights.lite};
   color: ${p => p.theme.colors.yellow};
   background: #00000026;
@@ -53,6 +57,11 @@ const WelcomText = styled.h3`
   border-bottom-right-radius: ${p => p.theme.radii.big};
   padding: 15px 30px 15px 70px;
   margin-left: -70px;
+  margin-top: -200px;
+  @media (min-width: 768px) {
+    font-size: ${p => p.theme.fontSizes.xl};
+    margin-top: 0;
+  }
   @media (min-width: 1100px) {
     margin-left: -130px;
     padding: 15px 30px 15px 130px;
@@ -62,9 +71,18 @@ const WelcomText = styled.h3`
 const HeroText = styled.h2`
   max-width: 300px;
   font-weight: ${p => p.theme.fontWeights.bold};
-  font-size: 40px;
+  font-size: 32px;
   line-height: ${p => p.theme.lineHeights.heading};
-  padding-top: 40px;
+  text-align: end;
+  margin-top: -200px;
+
+  @media (min-width: 768px) {
+    font-size: 40px;
+    text-align: start;
+
+    padding-top: 40px;
+    margin-top: 0;
+  }
   @media (min-width: 1100px) {
     max-width: 350px;
 
@@ -145,7 +163,8 @@ const Hero = () => {
             Hi <GiHand size={40} color={'yellow'} />
           </WelcomText>
           <HeroText>
-            <NameText>I'm Nikita,</NameText> front-end development
+            <NameText>I'm Nikita,</NameText>
+            <br /> front-end development
           </HeroText>
         </WrapText>
         <Photo src={mykyta} alt="x" />

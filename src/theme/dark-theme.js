@@ -14,6 +14,7 @@ export const dark = {
     s: '16px',
     m: '20px',
     l: '24px',
+    ll: '32px',
     xl: '48px',
   },
   fontWeights: {
