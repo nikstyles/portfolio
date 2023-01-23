@@ -39,6 +39,7 @@ const WrapText = styled.div`
   color: ${p => p.theme.colors.text};
   padding-left: 70px;
   display: flex;
+  justify-content: space-between;
   @media (min-width: 768px) {
     display: block;
   }
@@ -46,21 +47,44 @@ const WrapText = styled.div`
     padding-left: 130px;
   }
 `;
+
+const BgWelcomText = styled.div`
+  background-color: ${props => props.theme.colors.primary};
+  border-radius: ${p => p.theme.radii.big};
+  border-bottom-left-radius: -20px;
+
+  width: 85px;
+  height: 120px;
+  margin-top: -200px;
+  margin-left: -70px;
+  position: absolute;
+  z-index: -2;
+  @media (min-width: 768px) {
+    background-color: rgba(0, 0, 0, 0);
+  }
+`;
+
 const WelcomText = styled.h3`
   font-size: ${p => p.theme.fontSizes.ll};
   font-weight: ${p => p.theme.fontWeights.lite};
   color: ${p => p.theme.colors.yellow};
-  background: #00000026;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 350px;
   border-top-right-radius: ${p => p.theme.radii.big};
   border-bottom-right-radius: ${p => p.theme.radii.big};
   padding: 15px 30px 15px 70px;
-  margin-left: -70px;
-  margin-top: -200px;
+  margin-left: -117px;
+  margin-top: -195px;
   @media (min-width: 768px) {
-    font-size: ${p => p.theme.fontSizes.xl};
+    display: inline-block;
+
+    margin-left: -70px;
     margin-top: 0;
+    background: #00000026;
+
+    font-size: ${p => p.theme.fontSizes.xl};
   }
   @media (min-width: 1100px) {
     margin-left: -130px;
@@ -69,7 +93,7 @@ const WelcomText = styled.h3`
 `;
 
 const HeroText = styled.h2`
-  max-width: 300px;
+  max-width: 500px;
   font-weight: ${p => p.theme.fontWeights.bold};
   font-size: 32px;
   line-height: ${p => p.theme.lineHeights.heading};
@@ -96,11 +120,12 @@ const NameText = styled.span`
 const Photo = styled.img`
   position: absolute;
   bottom: 0;
-  right: 90px;
+  right: 20vw;
   z-index: 2;
   max-height: 240px;
 
   @media (min-width: 768px) {
+    right: 90px;
     max-height: 400px;
   }
   @media (min-width: 1100px) {
@@ -120,7 +145,10 @@ const LineOne = styled.img`
   bottom: 25px;
   right: 40px;
   z-index: 3;
-  width: 240px;
+  width: 150px;
+  @media (min-width: 768px) {
+    width: 240px;
+  }
 
   @media (min-width: 1100px) {
     bottom: 30px;
@@ -130,10 +158,18 @@ const LineOne = styled.img`
 `;
 const LineSecond = styled.img`
   position: absolute;
-  bottom: 110px;
-  right: 230px;
+  bottom: 60px;
+  right: 45vw;
   z-index: 1;
-  width: 200px;
+  width: 130px;
+  @media (min-width: 440px) {
+    right: 35vw;
+  }
+  @media (min-width: 768px) {
+    width: 200px;
+    bottom: 110px;
+    right: 230px;
+  }
 
   @media (min-width: 1100px) {
     width: 258px;
@@ -159,12 +195,14 @@ const Hero = () => {
     <>
       <HeroBanner>
         <WrapText>
+          <BgWelcomText />
           <WelcomText>
             Hi <GiHand size={40} color={'yellow'} />
           </WelcomText>
           <HeroText>
             <NameText>I'm Nikita,</NameText>
-            <br /> front-end development
+            <br /> front-end
+            <br /> development
           </HeroText>
         </WrapText>
         <Photo src={mykyta} alt="x" />
