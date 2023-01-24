@@ -19,7 +19,7 @@ const WrapTechSkills = styled.ul`
 
   display: flex;
   flex-wrap: wrap;
-  /* gap: 35px; */
+  gap: 28px;
 
   @media (max-width: 1200px) {
     justify-content: space-between;
@@ -58,8 +58,8 @@ const ItemTechSkills = styled.li`
 
   @media (max-width: 768px) {
     font-size: ${p => p.theme.fontSizes.s};
-
-    width: 135px;
+    max-width: calc((100% - 20px) / 2);
+    /* width: 135px; */
     padding: 15px 25px;
   }
 `;

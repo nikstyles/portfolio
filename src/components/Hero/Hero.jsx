@@ -101,13 +101,17 @@ const WelcomText = styled.h3`
 const HeroText = styled.h2`
   max-width: 500px;
   font-weight: ${p => p.theme.fontWeights.bold};
-  font-size: 26px;
+  font-size: 24px;
   line-height: ${p => p.theme.lineHeights.heading};
   text-align: end;
-  padding-right: 30px;
+  padding-right: 20px;
   /* margin-top: -200px; */
+  @media (min-width: 360px) {
+    font-size: 26px;
+  }
   @media (min-width: 400px) {
     font-size: 32px;
+    padding-right: 30px;
   }
   @media (min-width: 768px) {
     font-size: 40px;
