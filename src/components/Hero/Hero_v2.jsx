@@ -16,9 +16,9 @@ const HeroBanner = styled.div`
   background-color: ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.radii.big};
   position: relative;
-  margin-top: 30px;
+  margin-top: 250px;
   width: 100%;
-  height: 400px;
+  height: 200px;
 
   @media (min-width: 768px) {
     padding: 45px 0;
@@ -40,31 +40,29 @@ const WrapText = styled.div`
   padding-left: 70px;
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
   @media (min-width: 768px) {
     display: block;
-    padding-top: 0;
   }
   @media (min-width: 1100px) {
     padding-left: 130px;
   }
 `;
 
-// const BgWelcomText = styled.div`
-//   background-color: ${props => props.theme.colors.primary};
-//   border-radius: ${p => p.theme.radii.big};
-//   border-bottom-left-radius: -20px;
+const BgWelcomText = styled.div`
+  background-color: ${props => props.theme.colors.primary};
+  border-radius: ${p => p.theme.radii.big};
+  border-bottom-left-radius: -20px;
 
-//   width: 85px;
-//   height: 120px;
-//   margin-top: -200px;
-//   margin-left: -70px;
-//   position: absolute;
-//   z-index: -2;
-//   @media (min-width: 768px) {
-//     background-color: rgba(0, 0, 0, 0);
-//   }
-// `;
+  width: 85px;
+  height: 120px;
+  margin-top: -200px;
+  margin-left: -70px;
+  position: absolute;
+  z-index: -2;
+  @media (min-width: 768px) {
+    background-color: rgba(0, 0, 0, 0);
+  }
+`;
 
 const WelcomText = styled.h3`
   font-size: ${p => p.theme.fontSizes.ll};
@@ -76,19 +74,15 @@ const WelcomText = styled.h3`
   max-width: 350px;
   border-top-right-radius: ${p => p.theme.radii.big};
   border-bottom-right-radius: ${p => p.theme.radii.big};
-  padding: 15px 30px 15px 30px;
-  margin-left: -70px;
-
-  background: #00000026;
-
-  /* margin-top: -195px; */
+  padding: 15px 30px 15px 70px;
+  margin-left: -117px;
+  margin-top: -195px;
   @media (min-width: 768px) {
     display: inline-block;
-    padding: 15px 30px 15px 70px;
-    margin-left: -117px;
 
     margin-left: -70px;
     margin-top: 0;
+    background: #00000026;
 
     font-size: ${p => p.theme.fontSizes.xl};
   }
@@ -101,14 +95,11 @@ const WelcomText = styled.h3`
 const HeroText = styled.h2`
   max-width: 500px;
   font-weight: ${p => p.theme.fontWeights.bold};
-  font-size: 26px;
+  font-size: 32px;
   line-height: ${p => p.theme.lineHeights.heading};
   text-align: end;
-  padding-right: 30px;
-  /* margin-top: -200px; */
-  @media (min-width: 400px) {
-    font-size: 32px;
-  }
+  margin-top: -200px;
+
   @media (min-width: 768px) {
     font-size: 40px;
     text-align: start;
@@ -204,7 +195,7 @@ const Hero = () => {
     <>
       <HeroBanner>
         <WrapText>
-          {/* <BgWelcomText /> */}
+          <BgWelcomText />
           <WelcomText>
             Hi <GiHand size={40} color={'yellow'} />
           </WelcomText>

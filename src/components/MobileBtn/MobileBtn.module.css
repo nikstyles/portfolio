@@ -4,12 +4,17 @@
   width: 32px;
   position: absolute;
   top: 11px;
-  right: 15px;
+  right: 20px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .hamburger_lines {
+    right: 15px;
+  }
 }
 
 .line1 {
