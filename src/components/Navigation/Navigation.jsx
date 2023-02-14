@@ -120,7 +120,7 @@ export default function Navigation({ setBlur }) {
   const toggleModalAndOpenMenu = () => {
     setshowModal(!showModal);
     setBlur(!showModal);
-    setOpenMenu(!openMenu);
+    !matches && setOpenMenu(!openMenu);
   };
 
   const keyPress = useCallback(
@@ -166,13 +166,23 @@ export default function Navigation({ setBlur }) {
           <WrapWrapLinkNav className={openMenu ? 'active' : ''}>
             {/* <WrapLinkNav> */}
             <WrapLink>
-              <StyledLink to="/" onClick={() => setOpenMenu(!openMenu)} end>
+              <StyledLink
+                to="/"
+                onClick={() => !matches && setOpenMenu(!openMenu)}
+                end
+              >
                 Home
               </StyledLink>
-              <StyledLink to="/projects" onClick={() => setOpenMenu(!openMenu)}>
+              <StyledLink
+                to="/projects"
+                onClick={() => !matches && setOpenMenu(!openMenu)}
+              >
                 Projects
               </StyledLink>
-              <StyledLink to="/about" onClick={() => setOpenMenu(!openMenu)}>
+              <StyledLink
+                to="/about"
+                onClick={() => !matches && setOpenMenu(!openMenu)}
+              >
                 About
               </StyledLink>
             </WrapLink>
