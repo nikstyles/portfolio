@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 const Wrap = styled.div`
   margin-top: 55px;
@@ -65,9 +66,10 @@ const ItemTechSkills = styled.li`
 `;
 
 export default function TechSkills() {
+  const { t } = useTranslation();
   return (
     <Wrap>
-      <TitleTechSkills>TechSkills</TitleTechSkills>
+      <TitleTechSkills>{t('TechSkills.title')}</TitleTechSkills>
       <WrapTechSkills>
         <ItemTechSkills>HTML</ItemTechSkills>
         <ItemTechSkills>CSS/SASS</ItemTechSkills>

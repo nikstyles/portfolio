@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import mykyta_2 from '../../images/mykyta_2.jpg';
 import ExperienceList from './ExperienceList/ExperienceList';
 import EducationList from './EducationList/EducationList';
+import { useTranslation } from 'react-i18next';
 
 const WrapAbout = styled.div`
   box-sizing: border-box;
@@ -108,16 +109,13 @@ const WrapExperienceEducation = styled.div`
 // `;
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <>
       <WrapAbout>
         <Photo src={mykyta_2} alt="x" />
-        <AboutText>
-          I am a Junior Front-End developer looking for a remote job in a
-          company, where I can apply my experience. I focus on HTML, CSS,
-          JavaScript, and React. I have hands-on experience in teamwork. I am
-          motivated to work and to learn and open to new opportunities.
-        </AboutText>
+        <AboutText>{t('About.about_myself')}</AboutText>
       </WrapAbout>
       <WrapExperienceEducation>
         <ExperienceList />

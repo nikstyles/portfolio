@@ -1,5 +1,6 @@
 import items from './items';
 import styled from 'styled-components';
+// import { useTranslation } from 'react-i18next';
 
 const ItemsEducation = styled.div`
   padding-top: 30px;
@@ -39,6 +40,8 @@ const Text = styled.p`
 `;
 
 export default function EducationItem() {
+  // const { t } = useTranslation();
+
   const elements = items.map(({ id, title, timePeriod, text }) => (
     <ItemsEducation key={id}>
       <SecondaryTitle>{title}</SecondaryTitle>

@@ -8,25 +8,15 @@ import Loading from './Loading/Loading';
 
 const WrapApp = styled.div`
   background-color: ${props => props.theme.colors.background};
-  /* height: 100%; */
   min-height: 100vh;
-
   background-size: 100%;
 
-  /* background-attachment: fixed; */
   filter: ${props => (props.blur ? 'blur(10px)' : 'blur(0)')};
 `;
 
 const Homepage = lazy(() => import('pages/Homepage'));
 const Projects = lazy(() => import('pages/Projects/Projects'));
 const AboutPage = lazy(() => import('pages/AboutPage/AboutPage'));
-
-// const blurApp = showModal => {
-//   if (showModal) {
-//     `filter: blur(5px)`;
-//   }
-//   return;
-// };
 
 export const App = () => {
   const [blur, setBlur] = useState(false);
