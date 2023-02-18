@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import dniprom from '../../../images/logo_dniprom.svg';
 import polikam from '../../../images/logo_polikam.png';
 import { nanoid } from 'nanoid';
+import { useEffect } from 'react';
+// import itemsExperience from './itemsExperience';
 
 const ItemsExperience = styled.div`
   padding-top: 30px;
@@ -55,23 +57,29 @@ const Text = styled.p`
 `;
 
 export default function ExperienceItem() {
-  const { t } = useTranslation();
-  // const elements = itemsExperience.map(
-  //   ({ id, logoCompany, title, timePeriod, text }) => (
-  //     <ItemsExperience key={id}>
-  //       <Wrapinfo>
-  //         <LogoCompany src={logoCompany} />
-  //         <SecondaryTitle>{title}</SecondaryTitle>
-  //         <TimePeriod>{timePeriod}</TimePeriod>
-  //       </Wrapinfo>
-  //       <Text>{text}</Text>
-  //     </ItemsExperience>
-  //   )
-  // );
+  const { t, ready } = useTranslation();
 
+  const items = t('About', { returnObjects: true });
+
+  const elements = items.work_experience.map(
+    ({ logoCompany, title, timePeriod, text }) => (
+      <ItemsExperience key={nanoid()}>
+        <Wrapinfo>
+          <LogoCompany src={logoCompany === 'dniprom' ? dniprom : polikam} />
+          <SecondaryTitle>{title}</SecondaryTitle>
+          <TimePeriod>{timePeriod}</TimePeriod>
+        </Wrapinfo>
+        <Text>{text}</Text>
+      </ItemsExperience>
+    )
+  );
+  useEffect(() => {
+    if (!ready) return 'loading translations...';
+  }, [ready]);
   return (
     <>
-      <ItemsExperience key={nanoid()}>
+      {elements}
+      {/* <ItemsExperience key={nanoid()}>
         <Wrapinfo>
           <LogoCompany src={dniprom} />
           <SecondaryTitle>
@@ -90,7 +98,7 @@ export default function ExperienceItem() {
           <TimePeriod>03.2018 - 08.2018</TimePeriod>
         </Wrapinfo>
         <Text>{t('About.work_experience.text2')}</Text>
-      </ItemsExperience>
+      </ItemsExperience> */}
     </>
   );
 }

@@ -8,6 +8,7 @@ import Modal from '../Modal/Modal';
 import { useEffect, useCallback } from 'react';
 import MobileBtn from '../MobileBtn/MobileBtn';
 import { useTranslation } from 'react-i18next';
+import LangBtn from '../LangBtn/LangBtn';
 
 const WrapNav = styled.div`
   display: flex;
@@ -163,11 +164,7 @@ export default function Navigation({ setBlur }) {
       : (document.body.style.overflow = 'visible');
   }, [openMenu, showModal]);
 
-  const { t, i18n, ready } = useTranslation();
-
-  const handleClick = lang => {
-    i18n.changeLanguage(lang);
-  };
+  const { t, ready } = useTranslation();
 
   if (ready) {
     return (
@@ -208,10 +205,7 @@ export default function Navigation({ setBlur }) {
                   {t('MenuList.contacts')}
                 </Button>
               </WrapLinkNav>
-              <div>
-                <button onClick={() => handleClick('en')}>EN</button>
-                <button onClick={() => handleClick('ua')}>UA</button>
-              </div>
+              <LangBtn />
             </WrapWrapLinkNav>
           </WrapNav>
           {!matches && (

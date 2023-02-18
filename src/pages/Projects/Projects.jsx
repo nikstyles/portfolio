@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import items from './items';
 import { BsGithub } from 'react-icons/bs';
 import { CgBrowser } from 'react-icons/cg';
+import { useTranslation } from 'react-i18next';
 
 const ListProjects = styled.ul`
   margin-top: 30px;
@@ -136,6 +137,7 @@ const TechSkillsText = styled.p`
 `;
 
 export default function Projects() {
+  const { t } = useTranslation();
   const elements = items.map(({ id, toSite, toGithub, tech, text, image }) => (
     <ItemProjects key={id}>
       <WrapCoverProject className="image_cover">
@@ -146,7 +148,7 @@ export default function Projects() {
         <TitleName>{text}</TitleName>
         <WrapLink>
           <LinkButton href={toSite} type="button" target="_blank">
-            <CgBrowser size={20} /> Site
+            <CgBrowser size={20} /> {t('Projects.site')}
           </LinkButton>
           <LinkButton
             href={toGithub}

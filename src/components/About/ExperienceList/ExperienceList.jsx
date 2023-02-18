@@ -36,7 +36,7 @@ export default function ExperienceList() {
   return (
     <WrapExperienceList>
       <BgTitle />
-      <Title>{t('About.work_experience.title')}</Title>
+      <Title>{t('About.title_experience')}</Title>
       <ExperienceItem />
     </WrapExperienceList>
   );

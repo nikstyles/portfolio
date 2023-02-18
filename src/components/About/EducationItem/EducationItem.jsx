@@ -1,6 +1,8 @@
-import items from './items';
+// import items from './items';
 import styled from 'styled-components';
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import { nanoid } from 'nanoid';
+import { useEffect } from 'react';
 
 const ItemsEducation = styled.div`
   padding-top: 30px;
@@ -40,10 +42,15 @@ const Text = styled.p`
 `;
 
 export default function EducationItem() {
-  // const { t } = useTranslation();
+  const { t, ready } = useTranslation();
+  useEffect(() => {
+    if (!ready) return 'loading translations...';
+  }, [ready]);
 
-  const elements = items.map(({ id, title, timePeriod, text }) => (
-    <ItemsEducation key={id}>
+  const items = t('About', { returnObjects: true });
+
+  const elements = items.education.map(({ title, timePeriod, text }) => (
+    <ItemsEducation key={nanoid()}>
       <SecondaryTitle>{title}</SecondaryTitle>
       <TimePeriod>{timePeriod}</TimePeriod>
       <Text>{text}</Text>
