@@ -30,7 +30,7 @@ const ButtonLang = styled.button`
 `;
 
 export default function LangBtn() {
-  const [en, setEn] = useState(false);
+  const [en, setEn] = useState(true);
   const [ua, setUa] = useState(false);
 
   const { i18n } = useTranslation();
