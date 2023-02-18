@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { RiCloseLine } from 'react-icons/ri';
 import items from './items';
 // import { HiOutlineMail } from 'react-icons/hi';
+import { useTranslation } from 'react-i18next';
 
 const ModalBackdrop = styled.div`
   position: fixed;
@@ -106,11 +107,11 @@ export default function Modal({ toggleModal }) {
       {/* <ContactTitle>{title}</ContactTitle> */}
     </ItemModal>
   ));
-
+  const { t } = useTranslation();
   return createPortal(
     <ModalBackdrop onClick={() => toggleModal()}>
       <ModalContent onClick={e => e.stopPropagation()}>
-        <ModalTitle>Contacts</ModalTitle>
+        <ModalTitle>{t('Contacts.title')}</ModalTitle>
         <ModalList>
           <ModalItemBox>{elements}</ModalItemBox>
         </ModalList>

@@ -7,6 +7,8 @@ import { useState } from 'react';
 import Modal from '../Modal/Modal';
 import { useEffect, useCallback } from 'react';
 import MobileBtn from '../MobileBtn/MobileBtn';
+import { useTranslation } from 'react-i18next';
+import LangBtn from '../LangBtn/LangBtn';
 
 const WrapNav = styled.div`
   display: flex;
@@ -29,6 +31,8 @@ const WrapWrapLinkNav = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
+  width: 100%;
+  justify-content: space-between;
 
   @media (max-width: 1100px) {
     display: flex;
@@ -47,6 +51,7 @@ const WrapWrapLinkNav = styled.div`
     z-index: 10;
     transition: left 1s;
     padding-top: 150px;
+
     &.active {
       left: 0;
       z-index: 10;
@@ -54,15 +59,19 @@ const WrapWrapLinkNav = styled.div`
   }
 `;
 
-// const WrapLinkNav = styled.div`
-//   /* display: flex;
-//   align-items: center;
-//   justify-items: center; */
-//   @media (max-width: 1100px) {
-//     position: fixed;
-//     top: 50px;
-//   }
-// `;
+const WrapLinkNav = styled.div`
+  @media (min-width: 1100px) {
+    display: flex;
+    align-items: center;
+  }
+  /* display: flex;
+  align-items: center;
+  justify-items: center; */
+  /* @media (max-width: 1100px) {
+    position: fixed;
+    top: 50px;
+  } */
+`;
 
 const Button = styled.button`
   font-weight: ${p => p.theme.fontWeights.normal};
@@ -86,7 +95,7 @@ const Button = styled.button`
 
 const LogoLink = styled(NavLink)`
   cursor: pointer;
-  margin-right: 100px;
+  margin-right: 70px;
 `;
 const Logo = styled.img`
   height: 45px;
@@ -155,48 +164,57 @@ export default function Navigation({ setBlur }) {
       : (document.body.style.overflow = 'visible');
   }, [openMenu, showModal]);
 
-  return (
-    <nav className={s.nav}>
-      <Container>
-        <WrapNav>
-          <LogoLink to="/">
-            <Logo src={logo} />
-          </LogoLink>
+  const { t, ready } = useTranslation();
 
-          <WrapWrapLinkNav className={openMenu ? 'active' : ''}>
-            {/* <WrapLinkNav> */}
-            <WrapLink>
-              <StyledLink
-                to="/"
-                onClick={() => !matches && setOpenMenu(!openMenu)}
-                end
-              >
-                Home
-              </StyledLink>
-              <StyledLink
-                to="/projects"
-                onClick={() => !matches && setOpenMenu(!openMenu)}
-              >
-                Projects
-              </StyledLink>
-              <StyledLink
-                to="/about"
-                onClick={() => !matches && setOpenMenu(!openMenu)}
-              >
-                About
-              </StyledLink>
-            </WrapLink>
-            <Button type="button" onClick={toggleModalAndOpenMenu}>
-              Contact
-            </Button>
-            {/* </WrapLinkNav> */}
-          </WrapWrapLinkNav>
-        </WrapNav>
-        {!matches && (
-          <MobileBtn openBtn={setOpenMenu} openMenuBoolin={openMenu} />
-        )}
-        {showModal && <Modal toggleModal={toggleModal} />}
-      </Container>
-    </nav>
-  );
+  if (ready) {
+    return (
+      <nav className={s.nav}>
+        <Container>
+          <WrapNav>
+            <LogoLink to="/">
+              <Logo src={logo} />
+            </LogoLink>
+
+            <WrapWrapLinkNav className={openMenu ? 'active' : ''}>
+              <WrapLinkNav>
+                <WrapLink>
+                  <StyledLink
+                    to="/"
+                    onClick={() => !matches && setOpenMenu(!openMenu)}
+                    end
+                  >
+                    {t('MenuList.home')}
+                  </StyledLink>
+                  <StyledLink
+                    to="/projects"
+                    onClick={() => !matches && setOpenMenu(!openMenu)}
+                  >
+                    {t('MenuList.projects')}
+                  </StyledLink>
+                  <StyledLink
+                    to="/about"
+                    onClick={() => !matches && setOpenMenu(!openMenu)}
+                  >
+                    {t('MenuList.about')}
+                  </StyledLink>
+                </WrapLink>
+                <Button
+                  type="button"
+                  onClick={!matches && toggleModalAndOpenMenu}
+                >
+                  {t('MenuList.contacts')}
+                </Button>
+              </WrapLinkNav>
+              <LangBtn />
+            </WrapWrapLinkNav>
+          </WrapNav>
+          {!matches && (
+            <MobileBtn openBtn={setOpenMenu} openMenuBoolin={openMenu} />
+          )}
+          {showModal && <Modal toggleModal={toggleModal} />}
+        </Container>
+      </nav>
+    );
+  }
+  return <span>Loading...</span>;
 }

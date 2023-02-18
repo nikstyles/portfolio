@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import EducationItem from '../EducationItem/EducationItem';
+import { useTranslation } from 'react-i18next';
 
 const WrapEducationList = styled.div`
   background-color: ${props => props.theme.colors.darkSecondary};
@@ -35,10 +36,11 @@ const BgTitle = styled.div`
 `;
 
 export default function EducationList() {
+  const { t } = useTranslation();
   return (
     <WrapEducationList>
       <BgTitle />
-      <Title>EDUCATION</Title>
+      <Title>{t('About.title_education')}</Title>
       <EducationItem />
     </WrapEducationList>
   );

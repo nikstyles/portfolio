@@ -5,10 +5,7 @@ import mykyta from '../../images/20190930_172901.png';
 import lineOne from '../../images/line_big.svg';
 import lineSecond from '../../images/line_small.svg';
 import { useEffect } from 'react';
-// import {
-//   MouseParallaxChild,
-//   MouseParallaxContainer,
-// } from 'react-parallax-mouse';
+import { useTranslation } from 'react-i18next';
 
 const HeroBanner = styled.div`
   box-sizing: border-box;
@@ -49,23 +46,6 @@ const WrapText = styled.div`
     padding-left: 130px;
   }
 `;
-
-// const BgWelcomText = styled.div`
-//   background-color: ${props => props.theme.colors.primary};
-//   border-radius: ${p => p.theme.radii.big};
-//   border-bottom-left-radius: -20px;
-
-//   width: 85px;
-//   height: 120px;
-//   margin-top: -200px;
-//   margin-left: -70px;
-//   position: absolute;
-//   z-index: -2;
-//   @media (min-width: 768px) {
-//     background-color: rgba(0, 0, 0, 0);
-//   }
-// `;
-
 const WelcomText = styled.h3`
   font-size: ${p => p.theme.fontSizes.ll};
   font-weight: ${p => p.theme.fontWeights.lite};
@@ -145,13 +125,6 @@ const Photo = styled.img`
     max-height: 540px;
     right: 170px;
   }
-  /* @media (min-width: 1100px) {
-    max-height: 440px;
-  } */
-
-  /* @media (min-width: 1200px) {
-    max-height: 540px;
-  } */
 `;
 const LineOne = styled.img`
   position: absolute;
@@ -162,7 +135,6 @@ const LineOne = styled.img`
   @media (min-width: 768px) {
     width: 240px;
   }
-
   @media (min-width: 1100px) {
     bottom: 30px;
     right: 70px;
@@ -183,7 +155,6 @@ const LineSecond = styled.img`
     bottom: 110px;
     right: 230px;
   }
-
   @media (min-width: 1100px) {
     width: 258px;
     bottom: 160px;
@@ -192,6 +163,7 @@ const LineSecond = styled.img`
 `;
 
 const Hero = () => {
+  const { t } = useTranslation();
   useEffect(() => {
     document.addEventListener('mousemove', e => {
       document.querySelectorAll('.layer').forEach(layer => {
@@ -213,9 +185,9 @@ const Hero = () => {
             Hi <GiHand size={40} color={'yellow'} />
           </WelcomText>
           <HeroText>
-            <NameText>I'm Nikita,</NameText>
-            <br /> front-end
-            <br /> development
+            <NameText>{t('Banner.I_m_Nikita')}</NameText>
+            <br /> {t('Banner.front_end')}
+            <br /> {t('Banner.developer')}
           </HeroText>
         </WrapText>
         <Photo src={mykyta} alt="x" />

@@ -1,5 +1,11 @@
-import itemsExperience from './itemsExperience';
+// import itemsExperience from './itemsExperience';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import dniprom from '../../../images/logo_dniprom.svg';
+import polikam from '../../../images/logo_polikam.png';
+import { nanoid } from 'nanoid';
+import { useEffect } from 'react';
+// import itemsExperience from './itemsExperience';
 
 const ItemsExperience = styled.div`
   padding-top: 30px;
@@ -51,11 +57,15 @@ const Text = styled.p`
 `;
 
 export default function ExperienceItem() {
-  const elements = itemsExperience.map(
-    ({ id, logoCompany, title, timePeriod, text }) => (
-      <ItemsExperience key={id}>
+  const { t, ready } = useTranslation();
+
+  const items = t('About', { returnObjects: true });
+
+  const elements = items.work_experience.map(
+    ({ logoCompany, title, timePeriod, text }) => (
+      <ItemsExperience key={nanoid()}>
         <Wrapinfo>
-          <LogoCompany src={logoCompany} />
+          <LogoCompany src={logoCompany === 'dniprom' ? dniprom : polikam} />
           <SecondaryTitle>{title}</SecondaryTitle>
           <TimePeriod>{timePeriod}</TimePeriod>
         </Wrapinfo>
@@ -63,6 +73,32 @@ export default function ExperienceItem() {
       </ItemsExperience>
     )
   );
-
-  return <>{elements}</>;
+  useEffect(() => {
+    if (!ready) return 'loading translations...';
+  }, [ready]);
+  return (
+    <>
+      {elements}
+      {/* <ItemsExperience key={nanoid()}>
+        <Wrapinfo>
+          <LogoCompany src={dniprom} />
+          <SecondaryTitle>
+            {t('About.work_experience.position1')}
+          </SecondaryTitle>
+          <TimePeriod>01.2019 - 01.2022</TimePeriod>
+        </Wrapinfo>
+        <Text>{t('About.work_experience.text1')}</Text>
+      </ItemsExperience>
+      <ItemsExperience key={nanoid()}>
+        <Wrapinfo>
+          <LogoCompany src={polikam} />
+          <SecondaryTitle>
+            {t('About.work_experience.position2')}
+          </SecondaryTitle>
+          <TimePeriod>03.2018 - 08.2018</TimePeriod>
+        </Wrapinfo>
+        <Text>{t('About.work_experience.text2')}</Text>
+      </ItemsExperience> */}
+    </>
+  );
 }

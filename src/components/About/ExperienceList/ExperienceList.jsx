@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ExperienceItem from '../ExperienceItem/ExperienceItem';
+import { useTranslation } from 'react-i18next';
 
 const WrapExperienceList = styled.div`
   background-color: ${props => props.theme.colors.darkSecondary};
@@ -30,10 +31,12 @@ const BgTitle = styled.div`
 `;
 
 export default function ExperienceList() {
+  const { t } = useTranslation();
+
   return (
     <WrapExperienceList>
       <BgTitle />
-      <Title>WORK EXPERIENCE</Title>
+      <Title>{t('About.title_experience')}</Title>
       <ExperienceItem />
     </WrapExperienceList>
   );
