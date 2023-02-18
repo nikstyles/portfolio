@@ -129,7 +129,7 @@ export default function Navigation({ setBlur }) {
   const toggleModalAndOpenMenu = () => {
     setshowModal(!showModal);
     setBlur(!showModal);
-    setOpenMenu(!openMenu);
+    !matches && setOpenMenu(!openMenu);
   };
 
   const keyPress = useCallback(
