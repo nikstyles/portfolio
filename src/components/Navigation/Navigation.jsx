@@ -64,13 +64,6 @@ const WrapLinkNav = styled.div`
     display: flex;
     align-items: center;
   }
-  /* display: flex;
-  align-items: center;
-  justify-items: center; */
-  /* @media (max-width: 1100px) {
-    position: fixed;
-    top: 50px;
-  } */
 `;
 
 const Button = styled.button`
@@ -137,7 +130,6 @@ export default function Navigation({ setBlur }) {
       if (e.code === 'Escape') {
         setshowModal(!showModal);
         setBlur(!showModal);
-        // console.log('I pressed');
       }
     },
     [setBlur, showModal]
@@ -198,10 +190,7 @@ export default function Navigation({ setBlur }) {
                     {t('MenuList.about')}
                   </StyledLink>
                 </WrapLink>
-                <Button
-                  type="button"
-                  onClick={!matches && toggleModalAndOpenMenu}
-                >
+                <Button type="button" onClick={toggleModalAndOpenMenu}>
                   {t('MenuList.contacts')}
                 </Button>
               </WrapLinkNav>
