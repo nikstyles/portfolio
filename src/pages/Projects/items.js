@@ -3,8 +3,17 @@ import webStudio from '../../images/project_web-studio.jpg';
 import phonebook from '../../images/project_phonebook.jpg';
 import iceCream from '../../images/project_icecreame.jpg';
 import filmoteka from '../../images/project_filmoteka.jpg';
+import petly from '../../images/project_petly.jpg';
 
 const items = [
+  {
+    id: nanoid(),
+    toSite: 'https://team-project-pet-support.vercel.app/',
+    toGithub: 'https://github.com/Yevhenii3145/team-project-pet-support',
+    text: 'Petly',
+    tech: 'HTML, Sass module, JS, React/Redux, WEBPACK, Axios, Node js, MongoDB, Swagger, GIT',
+    image: petly,
+  },
   {
     id: nanoid(),
     toSite: 'https://nikstyles.github.io/goit-react-hw-08-phonebook/',
