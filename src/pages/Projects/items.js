@@ -8,10 +8,10 @@ import petly from '../../images/project_petly.jpg';
 const items = [
   {
     id: nanoid(),
-    toSite: 'https://team-project-pet-support.vercel.app/',
-    toGithub: 'https://github.com/Yevhenii3145/team-project-pet-support',
+    toSite: 'https://petly-project.vercel.app/',
+    toGithub: 'https://github.com/MaksymDziubanchuk/petly',
     text: 'Petly',
-    tech: 'HTML, Sass module, JS, React/Redux, WEBPACK, Axios, Node js, MongoDB, Swagger, GIT',
+    tech: 'HTML, Sass-module, JS, React/Redux, Axios, Node.js, MongoDB, Swagger, GIT',
     image: petly,
   },
   {
